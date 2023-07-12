@@ -8,6 +8,7 @@ packages = [{include = "python_base_setup_2023"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+flask = "^2.3.2"
 
 
 [tool.poetry.group.dev.dependencies]
