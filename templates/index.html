@@ -1,37 +1,43 @@
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Download Flask!</title>
-  </head>
-  <body>
-    <div class="container">
-        <div class="row">
-            <h1>Download the file</h1>
-              {% for image in images %}
-                <span class="link-container" style="margin-bottom: 20px;">
-                  <a href="{{ url_for('download', image_file=image) }}">{{ image }}</a>
-                  <button class="btn btn-primary" data-value="{{ image }}"> Copiar link Amazon</button>
-                </span>
-              {% endfor %}
-        </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Download Flask!</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <h1>Download the file</h1>
+      {% for image in images %}
+      <span class="link-container" style="margin-bottom: 20px;">
+        <a href="{{ url_for('download', image_file=image) }}">{{ image }}</a>
+        <button class="btn btn-primary" data-value="{{ image }}"> Copiar link Amazon</button>
+      </span>
+      {% endfor %}
     </div>
-    </body>
-    <script>
-      const allButtons = document.getElementsByTagName("button")
-      for (const btn of allButtons) {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault()
-          const buttonDataValue = btn.dataset.value;
-          const pid = /[\d]+_(\w+).png$/.exec(buttonDataValue)[1]
-          const afiliateUrl = `https://www.amazon.com.br/dp/${pid}?linkCode=ll1&tag=promothunder-20&language=pt_BR&ref_=as_li_ss_tl`
-          navigator.clipboard.writeText(afiliateUrl)
-          btn.innerText = "Copiado!"
-        })
-      }
-    </script>
+  </div>
+</body>
+<script>
+  const allButtons = document.getElementsByTagName("button")
+  for (const btn of allButtons) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault()
+      const buttonDataValue = btn.dataset.value;
+      const pid = /[\d]+_(\w+).png$/.exec(buttonDataValue)[1]
+      const gui = 'promothunder-20'
+      const ka = 'blackshop0e-20'
+      const afiliateUrl = `https://www.amazon.com.br/dp/${pid}?tag=${gui}&language=pt_BR&ref_=as_li_ss_tl`
+      navigator.clipboard.writeText(afiliateUrl)
+      btn.innerText = "Copiado!"
+    })
+  }
+</script>
+
 </html>
