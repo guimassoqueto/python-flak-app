@@ -7,4 +7,4 @@ pc:
 	pre-commit install && pre-commit autoupdate && pre-commit install --hook-type commit-msg
 
 a:
-	flask --app main run
+	echo 123 1> static/123.txt && rm static/* && poetry run python main.py
