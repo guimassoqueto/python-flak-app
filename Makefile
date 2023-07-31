@@ -1,10 +1,7 @@
-# install all dependencies
-i: 
-	poetry shell && poetry install
+env:
+	cat .env.sample 1> .env	
 
-# install pre-commit, update its dependencies and install hook for commit messages
-pc:
-	pre-commit install && pre-commit autoupdate && pre-commit install --hook-type commit-msg
 
+# INIT APPLICATION
 a:
 	echo 123 1> static/123.txt && rm static/* && poetry run python main.py

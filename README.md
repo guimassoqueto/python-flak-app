@@ -1,5 +1,5 @@
 ```shell
-git init
+make env
 ```
 
 ```shell

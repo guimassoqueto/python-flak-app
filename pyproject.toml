@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "python-base-setup-2023"
-version = "2.0.0"
+name = "scrap-flask"
+version = "2.0.1"
 description = ""
 authors = ["guimassoqueto <gui.massoqueto@gmail.com>"]
 readme = "README.md"
