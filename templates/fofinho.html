@@ -17,8 +17,8 @@
       <h1>Download the file</h1>
       {% for image in images %}
       <span class="link-container" style="margin-bottom: 20px;">
-        <a href="{{ url_for('download', image_file=image) }}">
-          <img src="static/{{image}}" alt="{{ image }}" width="100">
+        <a href="{{ url_for('fofinho_download', image_file=image) }}">
+          <img src="static/fofinho/{{image}}" alt="{{ image }}" width="100">
         </a>
         <button class="btn btn-primary" data-value="{{ image }}">Copiar URL</button>
       </span>
@@ -32,10 +32,10 @@
     btn.addEventListener('click', (e) => {
       e.preventDefault()
       const buttonDataValue = btn.dataset.value;
-      const pid = /(\w+).webp$/.exec(buttonDataValue)[1]
+      const pid = /(\w+)\.webp$/.exec(buttonDataValue)[1]
       const gui = 'promothunder-20'
       const ka = 'blackshop0e-20'
-      const afiliateUrl = `https://www.amazon.com.br/dp/${pid}?tag=${gui}&language=pt_BR&ref_=as_li_ss_tl`
+      const afiliateUrl = `https://www.amazon.com.br/dp/${pid}?tag=${ka}&language=pt_BR&ref_=as_li_ss_tl`
       navigator.clipboard.writeText(afiliateUrl)
       btn.innerText = "Copiado!"
     })
