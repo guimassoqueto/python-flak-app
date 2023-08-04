@@ -8,3 +8,6 @@ a:
 
 f:
 	poetry run python main.py
+
+or:
+	open https://github.com/guimassoqueto/scrap-flask
