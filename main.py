@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<a href="/thunder"><h3>Thunder</h3></a><a href="/fofinho"><h3>Fofinho</h3></a>'
+    return '<h1><a href="/thunder">Thunder</a></h1><h1><a href="/kadec">Kadec</a></h1>'
 
 
 @app.route('/thunder')
@@ -22,16 +22,16 @@ def thunder_download():
 
 
 
-@app.route('/fofinho')
-def fofinho():
-    images = [f for f in listdir('static/fofinho')]
-    return render_template('fofinho.html', images=images)
+@app.route('/kadec')
+def kadec():
+    images = [f for f in listdir('static/kadec')]
+    return render_template('kadec.html', images=images)
 
 
-@app.route('/fofinho-download', methods=['GET'])
-def fofinho_download():
+@app.route('/kadec-download', methods=['GET'])
+def kadec_download():
     image_file = request.args.to_dict().get('image_file')
-    return send_file(f'static/fofinho/{image_file}', as_attachment=True)
+    return send_file(f'static/kadec/{image_file}', as_attachment=True)
 
 
 if __name__ == "__main__":
