@@ -17,8 +17,8 @@
       <h1>Download the file</h1>
       {% for image in images %}
       <span class="link-container" style="margin-bottom: 20px;">
-        <a href="{{ url_for('fofinho_download', image_file=image) }}">
-          <img src="static/fofinho/{{image}}" alt="{{ image }}" width="100">
+        <a href="{{ url_for('kadec_download', image_file=image) }}">
+          <img src="static/kadec/{{image}}" alt="{{ image }}" width="100">
         </a>
         <button class="btn btn-primary" data-value="{{ image }}">Copiar URL</button>
       </span>
