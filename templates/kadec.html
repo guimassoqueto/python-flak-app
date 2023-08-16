@@ -31,13 +31,23 @@
   for (const btn of allButtons) {
     btn.addEventListener('click', (e) => {
       e.preventDefault()
+
       const buttonDataValue = btn.dataset.value;
-      const pid = /(\w+)\.webp$/.exec(buttonDataValue)[1]
-      const gui = 'promothunder-20'
-      const ka = 'blackshop0e-20'
-      const afiliateUrl = `https://www.amazon.com.br/dp/${pid}?tag=${ka}&language=pt_BR&ref_=as_li_ss_tl`
-      navigator.clipboard.writeText(afiliateUrl)
-      btn.innerText = "Copiado!"
+      const productUrl = buttonDataValue.replace(/_/g, "/").replace('.webp', '')
+      // const pid = /(\w+).webp$/.exec(buttonDataValue)[1]
+      
+      if (productUrl.includes('amazon.com')) {
+        const gui = 'blackshop0e-20'
+        const afiliateUrl = `${productUrl}?tag=${gui}&language=pt_BR&ref_=as_li_ss_tl`
+        navigator.clipboard.writeText(afiliateUrl)
+        btn.innerText = "Copiado!"
+      }
+
+      if (productUrl.includes('magazineluiza.com')) {
+        const afiliateUrl = productUrl.replace('magazineluiza.com.br/', 'magazinevoce.com.br/magazinefkfinz/')
+        navigator.clipboard.writeText(afiliateUrl)
+        btn.innerText = "Copiado!"
+      }
     })
   }
 </script>
