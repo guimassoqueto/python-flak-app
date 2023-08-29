@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "scrap-flask"
-version = "3.0.2"
+version = "3.0.3"
 description = "Scrap Flask"
 authors = ["guimassoqueto <gui.massoqueto@gmail.com>"]
 readme = "README.md"

@@ -13,6 +13,7 @@ def index():
 @app.route('/thunder')
 def thunder():
     images = [f for f in listdir('static/thunder')]
+    print(images)
     return render_template('thunder.html', images=images)
 
 @app.route('/thunder-download', methods=['GET'])

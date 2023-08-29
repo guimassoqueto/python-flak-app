@@ -33,8 +33,8 @@
       e.preventDefault()
 
       const buttonDataValue = btn.dataset.value;
-      const productUrl = buttonDataValue.replace(/_/g, "/").replace('.webp', '')
-      // const pid = /(\w+).webp$/.exec(buttonDataValue)[1]
+      const buttonDataValueWithoutExtension = buttonDataValue.replace('.webp', '')
+      const productUrl = decodeURIComponent(atob(buttonDataValueWithoutExtension));
       
       if (productUrl.includes('amazon.com')) {
         const gui = 'blackshop0e-20'
